@@ -60,7 +60,7 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 border-b border-white/10 bg-white/70 backdrop-blur-xl dark:bg-slate-950/70">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        
+
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-600 text-white shadow-lg">
@@ -81,19 +81,24 @@ const Navbar = () => {
 
         {/* Desktop Auth Buttons */}
         <div className="hidden items-center gap-3 lg:flex">
-          <Link
-            href="/login"
-            className="text-sm font-medium text-gray-700 transition hover:text-indigo-600 dark:text-gray-200 dark:hover:text-indigo-400"
-          >
-            Login
+
+          <Link href="/login">
+            <Button
+              radius="full"
+              className="h-10 bg-emerald-600 text-white hover:bg-emerald-700"
+            >
+              Login
+            </Button>
           </Link>
 
-          <Button
-            radius="full"
-            className="bg-indigo-600 px-6 text-white hover:bg-indigo-700"
-          >
-            Sign Up
-          </Button>
+          <Link href="/signup">
+            <Button
+              radius="full"
+              className="h-10 bg-indigo-600 text-white hover:bg-indigo-700"
+            >
+              Sign Up
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -113,27 +118,31 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="border-t border-white/10 bg-white/95 px-4 py-6 backdrop-blur-xl dark:bg-slate-950/95 lg:hidden">
-          
+
           <ul className="flex flex-col gap-5">
             {navLinks}
           </ul>
 
           {/* Mobile Buttons */}
           <div className="mt-6 flex flex-col gap-3 border-t border-white/10 pt-6">
-            
-            <Link
-              href="/login"
-              className="flex items-center justify-center rounded-full border border-gray-300 px-5 py-3 text-sm font-medium text-slate-700 transition hover:bg-gray-100 dark:border-slate-700 dark:text-gray-200 dark:hover:bg-slate-800"
-            >
-              Login
+
+            <Link href="/login">
+              <Button
+                radius="full"
+                className="h-12 bg-emerald-600 text-white hover:bg-emerald-700"
+              >
+                Login
+              </Button>
             </Link>
 
-            <Button
-              radius="full"
-              className="h-12 bg-indigo-600 text-white hover:bg-indigo-700"
-            >
-              Sign Up
-            </Button>
+            <Link href="/signup">
+              <Button
+                radius="full"
+                className="h-12 bg-indigo-600 text-white hover:bg-indigo-700"
+              >
+                Sign Up
+              </Button>
+            </Link>
           </div>
         </div>
       )}

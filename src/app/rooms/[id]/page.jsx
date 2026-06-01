@@ -1,3 +1,4 @@
+import BookingModal from "@/components/BookingModal";
 import { DeleteRoom } from "@/components/DeleteRoom";
 import { EditRoom } from "@/components/EditRoom";
 import Image from "next/image";
@@ -251,29 +252,7 @@ const RoomDetailsPage = async ({ params }) => {
                         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
 
                             {/* Book Now */}
-                            <button
-                                className="
-                  inline-flex
-                  items-center
-                  justify-center
-                  gap-2
-                  rounded-full
-                  bg-indigo-600
-                  px-8
-                  py-4
-                  text-sm
-                  font-semibold
-                  text-white
-                  transition
-                  hover:bg-indigo-700
-                "
-                            >
-
-                                <FaCalendarCheck />
-
-                                Book Now 
-
-                            </button>
+                            <BookingModal />
 
                             {/* Edit Room */}
                             <EditRoom  room={room}/>

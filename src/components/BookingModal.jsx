@@ -1,5 +1,6 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import {
     Button,
     Input,
@@ -10,10 +11,9 @@ import {
 } from "@heroui/react";
 import { useMemo, useState } from "react";
 import { FaCalendarCheck } from "react-icons/fa";
+import { toast } from "react-toastify";
 
-const hourlyRate = 20;
-
-export default function BookingModal() {
+export default function BookingModal({ room }) {
     const [date, setDate] = useState("");
     const [startTime, setStartTime] = useState("");
     const [endTime, setEndTime] = useState("");
@@ -45,8 +45,51 @@ export default function BookingModal() {
         const startHour = Number(startTime.split(":")[0]);
         const endHour = Number(endTime.split(":")[0]);
 
-        return (endHour - startHour) * hourlyRate;
-    }, [startTime, endTime]);
+        return (endHour - startHour) * room.hourlyRate;
+    }, [startTime, endTime, room.hourlyRate]);
+
+    const { data: session } = authClient.useSession();
+    const user = session?.user;
+
+    const handleBooking = async () => {
+        const bookingData = {
+            roomId: room._id,
+            roomName: room.roomName,
+            roomImage: room.image,
+            userId: user.id,
+            userName: user.name,
+            userEmail: user.email,
+            date,
+            startTime,
+            endTime,
+            totalCost,
+            note,
+            status: "confirmed",
+            createdAt: new Date(),
+        };
+        // console.log("Booking Data:", bookingData);
+
+        try {
+            const res = await fetch("http://localhost:5000/bookings", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(bookingData),
+            });
+            const data = await res.json();
+            console.log("Booking Response:", data);
+
+            if (res.ok) {
+                toast.success("Booking successful!");
+            } else {
+                toast.error("Failed to book. Please try again.");
+            }
+        } catch (error) {
+            console.error("Error booking room:", error);
+            toast.error("An error occurred while booking the room.");
+        }
+    };
 
     return (
         <Modal>
@@ -170,6 +213,7 @@ export default function BookingModal() {
                             </Button>
 
                             <Button
+                                onClick={handleBooking}
                                 color="primary"
                                 slot="close"
                             >

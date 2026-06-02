@@ -59,7 +59,6 @@ const Navbar = () => {
   );
 
   const { data: session } = authClient.useSession();
-
   const user = session?.user;
 
   const handleLogout = async () => {

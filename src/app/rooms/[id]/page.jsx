@@ -252,7 +252,7 @@ const RoomDetailsPage = async ({ params }) => {
                         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
 
                             {/* Book Now */}
-                            <BookingModal />
+                            <BookingModal room={room} />
 
                             {/* Edit Room */}
                             <EditRoom  room={room}/>

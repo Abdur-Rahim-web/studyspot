@@ -1,6 +1,8 @@
 import BookingModal from "@/components/BookingModal";
 import { DeleteRoom } from "@/components/DeleteRoom";
 import { EditRoom } from "@/components/EditRoom";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -18,9 +20,17 @@ const RoomDetailsPage = async ({ params }) => {
 
     const { id } = await params;
 
-    const res = await fetch(`http://localhost:5000/rooms/${id}`, {
-        cache: "no-store",
+    const {token} = await auth.api.getToken({
+        headers: await headers()
     });
+    // console.log("Token in RoomDetailsPage:", token);
+
+    const res = await fetch(`http://localhost:5000/rooms/${id}`, {
+        headers: {
+            authorization: `Bearer ${token}`
+        }
+        }
+    );
 
     const room = await res.json();
 
@@ -255,7 +265,7 @@ const RoomDetailsPage = async ({ params }) => {
                             <BookingModal room={room} />
 
                             {/* Edit Room */}
-                            <EditRoom  room={room}/>
+                            <EditRoom room={room} />
 
                             {/* Delete Room */}
                             <DeleteRoom room={room} />

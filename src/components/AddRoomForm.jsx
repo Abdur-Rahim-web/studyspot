@@ -1,5 +1,6 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import { redirect } from "next/navigation";
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
@@ -42,10 +43,14 @@ const AddRoomForm = () => {
 
         try {
 
+            const {data: tokenData} = await authClient.token();
+            console.log("Token in AddRoomForm:", tokenData);
+
             const res = await fetch("http://localhost:5000/rooms", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
+                    Authorization: `Bearer ${tokenData?.token}`,
                 },
                 body: JSON.stringify(roomData),
             });

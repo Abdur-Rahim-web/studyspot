@@ -1,4 +1,5 @@
 "use client";
+import { authClient } from "@/lib/auth-client";
 import { Button, Modal, } from "@heroui/react";
 import { toast } from "react-toastify";
 
@@ -40,17 +41,23 @@ export function EditRoom({ room }) {
 
         try {
 
+            const {data: tokenData} = await authClient.token();
+            console.log("Token in EditRoom:", tokenData);
+
             const res = await fetch(`http://localhost:5000/rooms/${room._id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
+                    Authorization: `Bearer ${tokenData?.token}`,
                 },
                 body: JSON.stringify(roomData),
             });
 
             const data = await res.json();
 
-            console.log(data);
+            // console.log(data);
+
+            window.location.reload();
 
             if (res.ok) {
 
@@ -69,6 +76,7 @@ export function EditRoom({ room }) {
             toast.error("Something went wrong");
 
         }
+        redirect(`/rooms/${room._id}`);
     };
 
 

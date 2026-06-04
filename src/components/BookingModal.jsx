@@ -59,6 +59,7 @@ export default function BookingModal({ room }) {
             userId: user.id,
             userName: user.name,
             userEmail: user.email,
+            userImage: user.image,
             date,
             startTime,
             endTime,
@@ -69,11 +70,15 @@ export default function BookingModal({ room }) {
         };
         // console.log("Booking Data:", bookingData);
 
+        const {data: tokenData} = await authClient.token();
+        console.log("Token in BookingModal:", tokenData);
+
         try {
             const res = await fetch("http://localhost:5000/bookings", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
+                    Authorization: `Bearer ${tokenData?.token}`,
                 },
                 body: JSON.stringify(bookingData),
             });

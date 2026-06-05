@@ -15,36 +15,49 @@ import {
     FaCalendarCheck,
 } from "react-icons/fa";
 
-export async function generateMetadata({ params }) {
-    const { id } = await params;
-
-    const room = await fetch(
-        `${process.env.NEXT_PUBLIC_SERVER_URL}/rooms/${id}`
-    ).then((res) => res.json());
-
-    return {
-        title: `StudySpot-${room.roomName}`,
-    };
-}
+export const metadata = {
+    title: "StudySpot-Room Details",
+};
 
 const RoomDetailsPage = async ({ params }) => {
     const { id } = await params;
 
-    const { token } = await auth.api.getToken({
-        headers: await headers(),
-    });
+    let session = null;
+    let token = null;
+
+    try {
+        session = await auth.api.getSession({
+            headers: headers(),
+        });
+
+        const tokenRes = await auth.api.getToken({
+            headers: headers(),
+        });
+
+        token = tokenRes?.token;
+    } catch (err) {
+        session = null;
+        token = null;
+    }
+
+    const currentUser = session?.user;
 
     const res = await fetch(
         `${process.env.NEXT_PUBLIC_SERVER_URL}/rooms/${id}`,
         {
-            headers: {
-                authorization: `Bearer ${token}`,
-            },
+            headers: token
+                ? { authorization: `Bearer ${token}` }
+                : {},
+            cache: "no-store",
         }
     );
 
     const room = await res.json();
 
+    const isOwner =
+        currentUser &&
+        room?.ownerId &&
+        currentUser.id === room.ownerId;
     return (
         <section className="min-h-screen bg-slate-50 px-4 py-12 dark:bg-slate-900 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-7xl">
@@ -170,9 +183,25 @@ const RoomDetailsPage = async ({ params }) => {
                         </div>
 
                         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                            <BookingModal room={room} />
-                            <EditRoom room={room} />
-                            <DeleteRoom room={room} />
+
+                            {currentUser ? (
+                                <BookingModal room={room} />
+                            ) : (
+                                <Link
+                                    href="/login"
+                                    className="inline-flex items-center justify-center rounded-full bg-emerald-600 px-10 py-4 font-semibold text-white transition hover:bg-emerald-700"
+                                >
+                                    Login To Book
+                                </Link>
+                            )}
+
+                            {isOwner && (
+                                <>
+                                    <EditRoom room={room} />
+                                    <DeleteRoom room={room} />
+                                </>
+                            )}
+
                         </div>
                     </div>
                 </div>

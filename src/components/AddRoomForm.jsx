@@ -8,6 +8,10 @@ import { toast } from "react-toastify";
 
 const AddRoomForm = () => {
 
+    const { data: session } = authClient.useSession();
+
+    const user = session?.user;
+
     const amenitiesOptions = [
         "Whiteboard",
         "Projector",
@@ -28,17 +32,17 @@ const AddRoomForm = () => {
         const amenities = formData.getAll("amenities");
 
         const roomData = {
-            roomName,
-            description,
-            image,
-            floor,
-            capacity,
-            hourlyRate,
+            roomName: formData.get("roomName"),
+            description: formData.get("description"),
+            image: formData.get("image"),
+            floor: formData.get("floor"),
+            capacity: Number(formData.get("capacity")),
+            hourlyRate: Number(formData.get("hourlyRate")),
             amenities,
             bookingCount: 0,
             ownerId: user.id,
-            ownerName: user.name,
             ownerEmail: user.email,
+            ownerName: user.name,
             createdAt: new Date(),
         };
 

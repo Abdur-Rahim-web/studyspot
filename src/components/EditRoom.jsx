@@ -1,10 +1,11 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
 import { Button, Modal, } from "@heroui/react";
+import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
 export function EditRoom({ room }) {
-    const {id} = room;
+    const router = useRouter();
 
     const amenitiesOptions = [
         "Whiteboard",
@@ -33,15 +34,13 @@ export function EditRoom({ room }) {
             capacity: Number(formData.get("capacity")),
             hourlyRate: Number(formData.get("hourlyRate")),
             amenities,
-            bookingCount: 0,
-            createdAt: new Date(),
         };
 
         console.log(roomData);
 
         try {
 
-            const {data: tokenData} = await authClient.token();
+            const { data: tokenData } = await authClient.token();
             console.log("Token in EditRoom:", tokenData);
 
             const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/rooms/${room._id}`, {
@@ -62,8 +61,8 @@ export function EditRoom({ room }) {
             if (res.ok) {
 
                 toast.success("Room updated successfully!");
-
-                form.reset();
+                router.push(`/rooms/${room._id}`);
+                router.refresh();
 
             } else {
 
@@ -76,7 +75,7 @@ export function EditRoom({ room }) {
             toast.error("Something went wrong");
 
         }
-        redirect(`/rooms/${room._id}`);
+
     };
 
 

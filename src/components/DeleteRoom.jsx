@@ -2,15 +2,17 @@
 
 import { authClient } from "@/lib/auth-client";
 import { AlertDialog, Button } from "@heroui/react";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
 export function DeleteRoom({ room }) {
+    const router = useRouter();
 
     const handleDelete = async () => {
         try {
 
-            const {data: tokenData} = await authClient.token();
+
+            const { data: tokenData } = await authClient.token();
             console.log("Token in DeleteRoom:", tokenData);
 
             const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/rooms/${room._id}`, {
@@ -25,14 +27,14 @@ export function DeleteRoom({ room }) {
 
             if (res.ok) {
                 toast.success("Room deleted successfully!");
+                router.push("/rooms");
+                router.refresh();
             } else {
                 toast.error(data.message || "Failed to delete room");
             }
         } catch (error) {
             toast.error("An error occurred while deleting the room");
         }
-
-        redirect("/rooms");
     };
 
 

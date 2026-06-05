@@ -93,10 +93,19 @@ const Footer = () => {
 
                         <li>
                             <Link
-                                href="/rooms/create"
+                                href="/add-room"
                                 className="transition hover:text-indigo-400"
                             >
                                 Add Room
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link
+                                href="/my-listings"
+                                className="transition hover:text-indigo-400"
+                            >
+                                My-Listings
                             </Link>
                         </li>
 
@@ -141,7 +150,7 @@ const Footer = () => {
 
                         <div className="flex items-center gap-3">
                             <IoMail className="h-5 w-5 text-indigo-400" />
-                            <p>support@studyspot.com</p>
+                            <p>studyspot@gmail.com</p>
                         </div>
 
                         <div className="flex items-center gap-3">

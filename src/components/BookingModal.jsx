@@ -9,11 +9,13 @@ import {
     Surface,
     TextField,
 } from "@heroui/react";
+import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import { FaCalendarCheck } from "react-icons/fa";
 import { toast } from "react-toastify";
 
 export default function BookingModal({ room }) {
+    const router = useRouter();
     const [date, setDate] = useState("");
     const [startTime, setStartTime] = useState("");
     const [endTime, setEndTime] = useState("");
@@ -52,6 +54,11 @@ export default function BookingModal({ room }) {
     const user = session?.user;
 
     const handleBooking = async () => {
+
+        if (!user) {
+            toast.error("Please login first");
+            return;
+        }
 
         if (!date || !startTime || !endTime) {
             toast.error("Please select date and time");
@@ -99,6 +106,8 @@ export default function BookingModal({ room }) {
                 setStartTime("");
                 setEndTime("");
                 setNote("");
+                router.push("/my-bookings");
+                router.refresh();
             } else {
                 toast.error(data.message || "Failed to book.");
             }

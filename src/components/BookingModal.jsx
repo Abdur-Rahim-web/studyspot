@@ -52,6 +52,12 @@ export default function BookingModal({ room }) {
     const user = session?.user;
 
     const handleBooking = async () => {
+
+        if (!date || !startTime || !endTime) {
+            toast.error("Please select date and time");
+            return;
+        }
+
         const bookingData = {
             roomId: room._id,
             roomName: room.roomName,
@@ -68,30 +74,36 @@ export default function BookingModal({ room }) {
             status: "confirmed",
             createdAt: new Date(),
         };
-        // console.log("Booking Data:", bookingData);
 
-        const {data: tokenData} = await authClient.token();
-        console.log("Token in BookingModal:", tokenData);
+        const { data: tokenData } = await authClient.token();
 
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/bookings`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${tokenData?.token}`,
-                },
-                body: JSON.stringify(bookingData),
-            });
+            const res = await fetch(
+                `${process.env.NEXT_PUBLIC_SERVER_URL}/bookings`,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${tokenData?.token}`,
+                    },
+                    body: JSON.stringify(bookingData),
+                }
+            );
+
             const data = await res.json();
-            console.log("Booking Response:", data);
 
             if (res.ok) {
                 toast.success("Booking successful!");
+
+                setDate("");
+                setStartTime("");
+                setEndTime("");
+                setNote("");
             } else {
-                toast.error("Failed to book. Please try again.");
+                toast.error(data.message || "Failed to book.");
             }
         } catch (error) {
-            console.error("Error booking room:", error);
+            console.error(error);
             toast.error("An error occurred while booking the room.");
         }
     };

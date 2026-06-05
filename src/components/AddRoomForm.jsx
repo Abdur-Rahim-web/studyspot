@@ -28,14 +28,17 @@ const AddRoomForm = () => {
         const amenities = formData.getAll("amenities");
 
         const roomData = {
-            roomName: formData.get("roomName"),
-            description: formData.get("description"),
-            image: formData.get("image"),
-            floor: formData.get("floor"),
-            capacity: Number(formData.get("capacity")),
-            hourlyRate: Number(formData.get("hourlyRate")),
+            roomName,
+            description,
+            image,
+            floor,
+            capacity,
+            hourlyRate,
             amenities,
             bookingCount: 0,
+            ownerId: user.id,
+            ownerName: user.name,
+            ownerEmail: user.email,
             createdAt: new Date(),
         };
 
@@ -43,7 +46,7 @@ const AddRoomForm = () => {
 
         try {
 
-            const {data: tokenData} = await authClient.token();
+            const { data: tokenData } = await authClient.token();
             console.log("Token in AddRoomForm:", tokenData);
 
             const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/rooms`, {

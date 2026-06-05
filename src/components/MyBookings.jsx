@@ -21,10 +21,13 @@ const MyBookingsClient = ({ bookings }) => {
                         key={booking._id}
                         className="overflow-hidden"
                     >
-                        <img
-                            src={booking.roomImage}
+
+                        <Image
+                            src={imageUrl}
                             alt="Room"
-                            className="h-56 w-full object-cover"
+                            width={400}
+                            height={250}
+                            className="object-cover"
                         />
 
                         <CardBody className="space-y-3">

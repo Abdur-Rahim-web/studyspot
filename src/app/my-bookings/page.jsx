@@ -4,13 +4,17 @@ import { auth } from '@/lib/auth';
 import { headers } from 'next/headers';
 import React from 'react';
 
+export const metadata = {
+    title: "StudySpot-My Bookings",
+};
+
 const MyBookingPage = async () => {
     const session = await auth.api.getSession({
         headers: await headers()
     });
     // console.log('Session in MyBookingPage:', session);
 
-    const {token} = session ? await auth.api.getToken({
+    const { token } = session ? await auth.api.getToken({
         headers: await headers()
     }) : {};
     // console.log("Token in MyBookingPage:", token);
@@ -18,7 +22,7 @@ const MyBookingPage = async () => {
     const user = session?.user;
     // console.log('User in MyBookingPage:', user);
 
-    const res = await fetch(`http://localhost:5000/bookings/${user?.id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/bookings/${user?.id}`, {
         headers: {
             authorization: `Bearer ${token}`
         }

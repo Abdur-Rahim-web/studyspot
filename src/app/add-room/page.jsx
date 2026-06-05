@@ -1,6 +1,10 @@
 import AddRoomForm from "@/components/AddRoomForm";
 import { FaPlusCircle } from "react-icons/fa";
 
+export const metadata = {
+    title: "StudySpot-Add Room",
+};
+
 const AddRoomPage = () => {
 
     return (

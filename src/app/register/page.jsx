@@ -15,6 +15,10 @@ import { useRouter } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-toastify";
 
+export const metadata = {
+    title: "StudySpot-Register",
+};
+
 const SignUpPage = () => {
     const router = useRouter();
 

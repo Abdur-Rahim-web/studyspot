@@ -13,7 +13,7 @@ export function DeleteRoom({ room }) {
             const {data: tokenData} = await authClient.token();
             console.log("Token in DeleteRoom:", tokenData);
 
-            const res = await fetch(`http://localhost:5000/rooms/${room._id}`, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/rooms/${room._id}`, {
                 method: "DELETE",
                 headers: {
                     Authorization: `Bearer ${tokenData?.token}`

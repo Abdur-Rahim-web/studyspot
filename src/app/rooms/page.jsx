@@ -4,9 +4,13 @@ import {
   FaSearch,
 } from "react-icons/fa";
 
+export const metadata = {
+  title: "StudySpot-Available Rooms"
+};
+
 const AllRoomsPage = async () => {
 
-  const res = await fetch("http://localhost:5000/rooms", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/rooms`, {
     cache: "no-store",
   });
 
@@ -101,7 +105,7 @@ const AllRoomsPage = async () => {
         {/* Cards */}
         <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
 
-          {rooms.map((room) => 
+          {rooms.map((room) =>
 
             <AllRoomCard key={room._id} room={room} />
 

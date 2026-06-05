@@ -6,6 +6,16 @@ import { headers } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
 
+export async function generateMetadata({ params }) {
+  const room = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/rooms/${params.id}`
+  ).then((res) => res.json());
+
+  return {
+    title: `StudySpot-${room.name}`,
+  };
+}
+
 import {
     FaArrowLeft,
     FaChair,
@@ -25,7 +35,7 @@ const RoomDetailsPage = async ({ params }) => {
     });
     // console.log("Token in RoomDetailsPage:", token);
 
-    const res = await fetch(`http://localhost:5000/rooms/${id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/rooms/${id}`, {
         headers: {
             authorization: `Bearer ${token}`
         }

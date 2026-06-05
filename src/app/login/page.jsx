@@ -11,15 +11,16 @@ import {
     Label,
     TextField,
 } from "@heroui/react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-toastify";
 
+export const metadata = {
+    title: "StudySpot-Login",
+};
+
 const LoginPage = () => {
     const router = useRouter();
-    const searchParams = useSearchParams();
-
-    const callbackUrl = searchParams.get("callbackUrl") || "/";
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -39,14 +40,14 @@ const LoginPage = () => {
 
         toast.success("Logged in successfully!");
 
-        router.push(callbackUrl);
+        router.push("/");
         router.refresh();
     };
 
     const handleGoogle = async () => {
         await authClient.signIn.social({
             provider: "google",
-            callbackURL: callbackUrl,
+            callbackURL: "/",
         });
     };
 

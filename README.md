@@ -156,7 +156,7 @@ The platform ensures secure authentication, owner-based access control, and conf
 ## 📦 Installation
 
 ### Client Setup
-```bash
+bash
 git clone https://github.com/Abdur-Rahim-web/studyspot-client
 cd studyspot-client
 npm install
@@ -164,14 +164,14 @@ npm run dev
 
 ### Server Setup
 
-```bash
+bash
 git clone https://github.com/Abdur-Rahim-web/studyspot-server
 cd studyspot-server
 npm install
 npm start
 
 
-👨‍💻 Developer
+## 👨‍💻 Developer
 
 Abdur Rahim
 Junior Full Stack Developer

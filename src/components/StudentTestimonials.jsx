@@ -34,7 +34,6 @@ const StudentTestimonials = () => {
     <section className="bg-white px-4 py-20 dark:bg-slate-950 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         
-        {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center">
           
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-4 py-2 dark:border-white/10 dark:bg-white/5">
@@ -60,7 +59,6 @@ const StudentTestimonials = () => {
           </p>
         </div>
 
-        {/* Testimonials */}
         <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
           
           {testimonials.map((testimonial) => (
@@ -81,19 +79,16 @@ const StudentTestimonials = () => {
                 dark:bg-slate-900
               "
             >
-              
-              {/* Quote Icon */}
+
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-100 dark:bg-indigo-500/10">
                 
                 <FaQuoteLeft className="text-2xl text-indigo-600 dark:text-indigo-400" />
               </div>
 
-              {/* Review */}
               <p className="mt-6 text-sm leading-7 text-slate-600 dark:text-gray-400">
                 {testimonial.review}
               </p>
 
-              {/* Stars */}
               <div className="mt-6 flex items-center gap-1">
                 <FaStar className="text-yellow-400" />
                 <FaStar className="text-yellow-400" />
@@ -102,7 +97,6 @@ const StudentTestimonials = () => {
                 <FaStar className="text-yellow-400" />
               </div>
 
-              {/* User Info */}
               <div className="mt-6 border-t border-slate-200 pt-5 dark:border-white/10">
                 
                 <h3 className="text-lg font-bold text-slate-900 dark:text-white">

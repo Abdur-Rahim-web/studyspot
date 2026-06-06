@@ -129,7 +129,7 @@ export default function BookingModal({ room }) {
 
             <Modal.Backdrop>
                 <Modal.Container placement="auto">
-                    <Modal.Dialog className="sm:max-w-lg">
+                    <Modal.Dialog className="sm:max-w-lg max-h-[90vh] flex flex-col">
                         <Modal.CloseTrigger />
 
                         <Modal.Header>
@@ -146,7 +146,7 @@ export default function BookingModal({ room }) {
                             </p>
                         </Modal.Header>
 
-                        <Modal.Body className="p-6">
+                        <Modal.Body className="p-6 overflow-y-auto flex-1">
                             <Surface variant="default">
                                 <form className="flex flex-col gap-4">
 

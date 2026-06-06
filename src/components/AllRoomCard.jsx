@@ -26,7 +26,6 @@ const AllRoomCard = ({ room }) => {
               "
             >
 
-              {/* Image */}
               <div className="relative h-64 w-full overflow-hidden">
 
                 <Image
@@ -36,7 +35,6 @@ const AllRoomCard = ({ room }) => {
                   className="object-cover transition duration-500 hover:scale-105"
                 />
 
-                {/* Price */}
                 <div className="absolute left-4 top-4 rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-lg">
 
                   ${room.hourlyRate}/hr
@@ -45,7 +43,6 @@ const AllRoomCard = ({ room }) => {
 
               </div>
 
-              {/* Content */}
               <div className="flex flex-1 flex-col p-6">
 
                 {/* Title */}
@@ -55,14 +52,12 @@ const AllRoomCard = ({ room }) => {
 
                 </h2>
 
-                {/* Description */}
                 <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-gray-400">
 
                   {room.description?.slice(0, 100)}...
 
                 </p>
 
-                {/* Info */}
                 <div className="mt-5 space-y-2">
 
                   <p className="text-sm text-slate-700 dark:text-gray-300">
@@ -79,7 +74,6 @@ const AllRoomCard = ({ room }) => {
 
                 </div>
 
-                {/* Amenities */}
                 <div className="mt-5 flex flex-wrap gap-2">
 
                   {room.amenities?.slice(0, 3).map((item, index) => (
@@ -115,7 +109,6 @@ const AllRoomCard = ({ room }) => {
 
                 </div>
 
-                {/* Button */}
                 <Link
                   href={`/rooms/${room._id}`}
                   className="

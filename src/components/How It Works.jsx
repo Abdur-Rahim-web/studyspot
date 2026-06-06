@@ -39,10 +39,8 @@ const HowItWorks = () => {
         <section className="bg-slate-50 px-4 py-20 dark:bg-slate-900 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-7xl">
 
-                {/* Header */}
                 <div className="mx-auto max-w-3xl text-center">
 
-                    {/* Badge */}
                     <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 dark:border-white/10 dark:bg-white/5">
 
                         <span className="text-sm font-medium text-slate-700 dark:text-gray-300">
@@ -50,7 +48,6 @@ const HowItWorks = () => {
                         </span>
                     </div>
 
-                    {/* Heading */}
                     <h2 className="text-3xl font-black leading-tight text-slate-900 md:text-5xl dark:text-white">
                         How
                         <span className="bg-linear-to-r from-indigo-500 to-emerald-500 bg-clip-text text-transparent">
@@ -60,14 +57,12 @@ const HowItWorks = () => {
                         Works
                     </h2>
 
-                    {/* Description */}
                     <p className="mt-5 text-base leading-7 text-slate-600 dark:text-gray-400 md:text-lg">
                         Book your perfect study environment in just a few simple steps and
                         stay focused on achieving your goals.
                     </p>
                 </div>
 
-                {/* Steps */}
                 <div className="relative mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
 
                     {steps.map((step) => (
@@ -92,12 +87,10 @@ const HowItWorks = () => {
               "
                         >
 
-                            {/* Step Number */}
                             <div className="absolute right-6 top-6 text-6xl font-black text-slate-100 dark:text-white/5">
                                 {step.id}
                             </div>
 
-                            {/* Icon */}
                             <div
                                 className="
                   flex
@@ -116,17 +109,14 @@ const HowItWorks = () => {
                                 {step.icon}
                             </div>
 
-                            {/* Title */}
                             <h3 className="mt-8 text-2xl font-bold text-slate-900 dark:text-white">
                                 {step.title}
                             </h3>
 
-                            {/* Description */}
                             <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-gray-400">
                                 {step.description}
                             </p>
 
-                            {/* Button */}
                             <button
                                 className="
                   mt-6

@@ -8,10 +8,8 @@ const Footer = () => {
     return (
         <footer className="border-t border-white/10 bg-slate-950 text-white">
 
-            {/* Main Footer */}
             <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
 
-                {/* Brand */}
                 <div>
                     <div className="flex items-center gap-3">
 
@@ -34,7 +32,6 @@ const Footer = () => {
                         productivity, and collaborative learning experiences.
                     </p>
 
-                    {/* Social Icons */}
                     <div className="mt-6 flex items-center gap-4">
 
                         <Link
@@ -44,7 +41,6 @@ const Footer = () => {
                             <FaFacebook className="h-5 w-5" />
                         </Link>
 
-                        {/* X Logo */}
                         <Link
                             href="#"
                             className="rounded-full bg-white/10 p-3 transition hover:bg-indigo-600"
@@ -68,7 +64,6 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Quick Links */}
                 <div>
                     <h3 className="text-lg font-semibold">Quick Links</h3>
 
@@ -120,7 +115,6 @@ const Footer = () => {
                     </ul>
                 </div>
 
-                {/* Features */}
                 <div>
                     <h3 className="text-lg font-semibold">Features</h3>
 
@@ -133,7 +127,6 @@ const Footer = () => {
                     </ul>
                 </div>
 
-                {/* Contact */}
                 <div>
                     <h3 className="text-lg font-semibold">Contact Us</h3>
 
@@ -161,7 +154,6 @@ const Footer = () => {
                 </div>
             </div>
 
-            {/* Bottom Footer */}
             <div className="border-t border-white/10">
                 <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-center text-sm text-gray-400 sm:px-6 md:flex-row lg:px-8">
 

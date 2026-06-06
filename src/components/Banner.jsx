@@ -21,7 +21,7 @@ const HeroSection = () => {
       <div className="absolute -bottom-37.5 -right-30 h-80 w-[320px] rounded-full bg-emerald-500/20 blur-3xl" />
 
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-6 py-24 text-center lg:px-10">
-        {/* Badge */}
+
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 backdrop-blur-md">
           <BookOpen className="h-4 w-4 text-emerald-400" />
           <span className="text-sm text-gray-200">
@@ -61,7 +61,7 @@ const HeroSection = () => {
         </div>
 
         <div className="mt-16 grid w-full max-w-4xl gap-6 md:grid-cols-3">
-          {/* Card 1 */}
+          
           <div className="rounded-3xl border border-white/10 bg-white/10 p-6 backdrop-blur-xl">
             <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-500/20">
               <BookOpen className="h-7 w-7 text-indigo-400" />
@@ -70,7 +70,7 @@ const HeroSection = () => {
             <p className="mt-2 text-gray-300">Available Study Rooms</p>
           </div>
 
-          {/* Card 2 */}
+          
           <div className="rounded-3xl border border-white/10 bg-white/10 p-6 backdrop-blur-xl">
             <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-500/20">
               <Users className="h-7 w-7 text-emerald-400" />
@@ -79,7 +79,7 @@ const HeroSection = () => {
             <p className="mt-2 text-gray-300">Active Students</p>
           </div>
 
-          {/* Card 3 */}
+          
           <div className="rounded-3xl border border-white/10 bg-white/10 p-6 backdrop-blur-xl">
             <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-500/20">
               <Clock className="h-7 w-7 text-orange-400" />

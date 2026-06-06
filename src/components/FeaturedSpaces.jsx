@@ -17,7 +17,6 @@ const FeaturedSpaces = async () => {
 
             <div className="mx-auto max-w-7xl">
 
-                {/* Header */}
                 <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
 
                     <div className="max-w-2xl">
@@ -52,7 +51,6 @@ const FeaturedSpaces = async () => {
 
                 </div>
 
-                {/* Cards */}
                 <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
 
                     {rooms.map((room) => (
@@ -77,8 +75,6 @@ const FeaturedSpaces = async () => {
                 dark:bg-slate-950
               "
                         >
-
-                            {/* Image */}
                             <div className="relative h-64 w-full overflow-hidden">
 
                                 <Image
@@ -97,24 +93,20 @@ const FeaturedSpaces = async () => {
 
                             </div>
 
-                            {/* Content */}
                             <div className="flex flex-1 flex-col p-6">
 
-                                {/* Title */}
                                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
 
                                     {room.roomName}
 
                                 </h3>
 
-                                {/* Description */}
                                 <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-gray-400">
 
                                     {room.description.slice(0, 100)}...
 
                                 </p>
 
-                                {/* Info */}
                                 <div className="mt-5 space-y-2">
 
                                     <p className="text-sm text-slate-700 dark:text-gray-300">
@@ -127,7 +119,6 @@ const FeaturedSpaces = async () => {
 
                                 </div>
 
-                                {/* Amenities */}
                                 <div className="mt-5 flex flex-wrap gap-2">
 
                                     {room.amenities.slice(0, 3).map((item, index) => (
@@ -153,7 +144,6 @@ const FeaturedSpaces = async () => {
 
                                 </div>
 
-                                {/* Button */}
                                 <Link
                                     href={`/rooms/${room._id}`}
                                     className="mt-auto inline-flex items-center gap-2 pt-6 font-semibold text-indigo-600 transition hover:gap-3 dark:text-indigo-400"

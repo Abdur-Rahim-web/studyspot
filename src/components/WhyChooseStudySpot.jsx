@@ -45,10 +45,8 @@ const WhyChooseStudySpot = () => {
         <section className="bg-white px-4 py-20 dark:bg-slate-950 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-7xl">
 
-                {/* Section Header */}
                 <div className="mx-auto max-w-3xl text-center">
 
-                    {/* Badge */}
                     <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-4 py-2 backdrop-blur-md dark:border-white/10 dark:bg-white/5">
 
                         <HiSparkles className="h-4 w-4 text-indigo-500 dark:text-indigo-400" />
@@ -58,7 +56,6 @@ const WhyChooseStudySpot = () => {
                         </span>
                     </div>
 
-                    {/* Heading */}
                     <h2 className="text-3xl font-black leading-tight text-slate-900 md:text-5xl dark:text-white">
                         Designed for
                         <span className="bg-linear-to-r from-indigo-500 to-emerald-500 bg-clip-text text-transparent">
@@ -67,14 +64,12 @@ const WhyChooseStudySpot = () => {
                         </span>
                     </h2>
 
-                    {/* Description */}
                     <p className="mt-5 text-base leading-7 text-slate-600 dark:text-gray-400 md:text-lg">
                         Discover premium study environments tailored for productivity,
                         collaboration, and uninterrupted learning experiences.
                     </p>
                 </div>
 
-                {/* Feature Cards */}
                 <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
 
                     {features.map((feature, index) => (
@@ -97,8 +92,6 @@ const WhyChooseStudySpot = () => {
                 dark:bg-white/5
               "
                         >
-
-                            {/* Icon */}
                             <div
                                 className="
                   flex
@@ -117,12 +110,10 @@ const WhyChooseStudySpot = () => {
                                 {feature.icon}
                             </div>
 
-                            {/* Title */}
                             <h3 className="mt-6 text-xl font-bold text-slate-900 dark:text-white">
                                 {feature.title}
                             </h3>
 
-                            {/* Description */}
                             <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-gray-400">
                                 {feature.description}
                             </p>

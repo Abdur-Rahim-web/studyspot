@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="" alt="StudySpot Banner" width="100%" />
+  <img src="/screenshots/home-page.png" width="100%" />
 </p>
 
 <h1 align="center">🏫 StudySpot</h1>
@@ -74,7 +74,7 @@ The platform ensures secure authentication, owner-based access control, and conf
 ## 📂 Core Modules
 
 ### 🏠 Room Management
-- Create study rooms with details:
+- Create study rooms with:
   - Room name
   - Description
   - Capacity
@@ -97,35 +97,42 @@ The platform ensures secure authentication, owner-based access control, and conf
 
 ### 🏠 Home Page
 <p align="center">
-  <img src="https://your-image-link.com/home.png" width="90%" />
+  <img src="/screenshots/home-page.png" width="90%" />
+</p>
+
+---
+
+### 🏢 All Room Page
+<p align="center">
+  <img src="/screenshots/all-room-page.png" width="90%" />
 </p>
 
 ---
 
 ### 🏢 Room Details Page
 <p align="center">
-  <img src="https://your-image-link.com/room-details.png" width="90%" />
+  <img src="/screenshots/room-details-page.png" width="90%" />
 </p>
 
 ---
 
 ### ➕ Add Room Page
 <p align="center">
-  <img src="https://your-image-link.com/add-room.png" width="90%" />
+  <img src="/screenshots/add-room-page.png" width="90%" />
 </p>
 
 ---
 
 ### 📅 My Listings Page
 <p align="center">
-  <img src="https://your-image-link.com/my-listings.png" width="90%" />
+  <img src="/screenshots/my-listings-page.png" width="90%" />
 </p>
 
 ---
 
 ### 📌 My Bookings Page
 <p align="center">
-  <img src="https://your-image-link.com/my-bookings.png" width="90%" />
+  <img src="/screenshots/my-bookings-page.png" width="90%" />
 </p>
 
 ---
@@ -156,23 +163,9 @@ The platform ensures secure authentication, owner-based access control, and conf
 ## 📦 Installation
 
 ### Client Setup
-bash
+
+```bash
 git clone https://github.com/Abdur-Rahim-web/studyspot-client
 cd studyspot-client
 npm install
 npm run dev
-
-### Server Setup
-
-bash
-git clone https://github.com/Abdur-Rahim-web/studyspot-server
-cd studyspot-server
-npm install
-npm start
-
-
-## 👨‍💻 Developer
-
-Abdur Rahim
-Junior Full Stack Developer
-GitHub: https://github.com/Abdur-Rahim-web

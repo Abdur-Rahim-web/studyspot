@@ -1,73 +1,63 @@
 <p align="center">
-  <img src="/screenshots/home-page.png" width="100%" />
+  <img src="./screenshots/home-page.png" width="100%" alt="StudySpot Banner" />
 </p>
 
 <h1 align="center">🏫 StudySpot</h1>
 
 <p align="center">
-  A modern study room booking platform with authentication, scheduling, and role-based access control.
+  <b>Modern Study Room Booking Platform</b> built with Next.js, authentication, scheduling & role-based access control.
 </p>
 
 <p align="center">
-  🔗 <a href="https://studyspot-client.vercel.app">Live Site</a> • 
-  📂 <a href="https://github.com/Abdur-Rahim-web/studyspot-client">Client Repo</a> • 
-  ⚙️ <a href="https://github.com/Abdur-Rahim-web/studyspot-server">Server Repo</a>
+  <a href="https://studyspot-client.vercel.app">🚀 Live Site</a> •
+  <a href="https://github.com/Abdur-Rahim-web/studyspot-client">💻 Client Repo</a> •
+  <a href="https://github.com/Abdur-Rahim-web/studyspot-server">🛠 Server Repo</a>
 </p>
 
 ---
 
-## 📌 Overview
+## 🧠 Overview
 
-StudySpot is a full-stack room booking system that allows users to create study spaces, explore available rooms, and book them based on time availability.
+StudySpot is a full-stack study room booking platform where users can create rooms, explore available spaces, and book them with real-time time-slot validation.
 
-The platform ensures secure authentication, owner-based access control, and conflict-free booking logic, providing a smooth real-world booking experience.
-
----
-
-## ✨ Features
-
-- 🔐 Secure authentication (JWT-based login system)
-- 🏠 Create, edit, and delete study rooms
-- 📅 Real-time booking system with conflict validation
-- 👤 User-specific dashboards (My Listings, My Bookings)
-- 🧾 Owner-only access for edit/delete actions
-- ⚡ Fast and responsive UI with Next.js App Router
-- 🔄 Persistent login state after page refresh
-- 🚫 Protected routes for authenticated users only
-- 📱 Fully responsive (mobile, tablet, desktop)
+It ensures secure authentication, role-based access control, and conflict-free booking experience.
 
 ---
 
-## 🧠 Tech Stack
+## ⚡ Tech Stack
 
-**Frontend:**
+**Frontend**
 - Next.js
 - React
 - Tailwind CSS
 - HeroUI
 
-**Backend:**
+**Backend**
 - Node.js
 - Express.js
 - MongoDB
 
-**Authentication:**
+**Authentication**
 - JWT
-- OAuth (Google Login)
+- Google OAuth
 
-**Deployment:**
+**Deployment**
 - Vercel (Client)
 - Render / Railway (Server)
 
 ---
 
-## 🔐 Security & Auth
+## ✨ Features
 
-- JWT token-based authentication
-- Protected API routes
-- Owner-based authorization for CRUD actions
-- Environment variables for sensitive data
-- Secure session handling
+- 🔐 Secure JWT authentication  
+- 🏠 Create, update, delete study rooms  
+- 📅 Real-time booking system  
+- 👤 User dashboards (My Listings, My Bookings)  
+- 🧾 Owner-only edit/delete access  
+- ⚡ Fast Next.js App Router UI  
+- 🔄 Persistent login after refresh  
+- 🚫 Protected routes  
+- 📱 Fully responsive design  
 
 ---
 
@@ -75,21 +65,21 @@ The platform ensures secure authentication, owner-based access control, and conf
 
 ### 🏠 Room Management
 - Create study rooms with:
-  - Room name
+  - Name
   - Description
   - Capacity
   - Hourly rate
   - Amenities
 
 ### 📅 Booking System
-- Prevents overlapping bookings
-- Time-slot conflict validation
+- Prevent overlapping bookings
+- Time-slot validation
 - Booking history per user
 
 ### 👤 User System
 - Login / Register system
 - Google OAuth support
-- Role-based access (Owner / User)
+- Role-based access (User / Owner)
 
 ---
 
@@ -97,75 +87,68 @@ The platform ensures secure authentication, owner-based access control, and conf
 
 ### 🏠 Home Page
 <p align="center">
-  <img src="/screenshots/home-page.png" width="90%" />
+  <img src="./screenshots/home-page.png" width="90%" />
 </p>
 
 ---
 
-### 🏢 All Room Page
+### 🏢 All Rooms Page
 <p align="center">
-  <img src="/screenshots/all-room-page.png" width="90%" />
+  <img src="./screenshots/all-room-page.png" width="90%" />
 </p>
 
 ---
 
 ### 🏢 Room Details Page
 <p align="center">
-  <img src="/screenshots/room-details-page.png" width="90%" />
+  <img src="./screenshots/room-details-page.png" width="90%" />
 </p>
 
 ---
 
 ### ➕ Add Room Page
 <p align="center">
-  <img src="/screenshots/add-room-page.png" width="90%" />
+  <img src="./screenshots/add-room-page.png" width="90%" />
 </p>
 
 ---
 
 ### 📅 My Listings Page
 <p align="center">
-  <img src="/screenshots/my-listings-page.png" width="90%" />
+  <img src="./screenshots/my-listings-page.png" width="90%" />
 </p>
 
 ---
 
 ### 📌 My Bookings Page
 <p align="center">
-  <img src="/screenshots/my-bookings-page.png" width="90%" />
+  <img src="./screenshots/my-bookings-page.png" width="90%" />
 </p>
 
 ---
 
-## 🚀 Deployment
-
-### Client
-- Hosted on Vercel
-- Environment variables configured via dashboard
-
-### Server
-- Hosted on Render / Railway
-- MongoDB Atlas connected
-- JWT-secured API communication
-
----
-
-## 🔁 Reliability Features
-
-- Page refresh does not break authentication
-- Protected routes persist after reload
-- Hydration issues resolved
-- Custom toast notifications instead of default alerts
-- Graceful error handling for API failures
-
----
-
-## 📦 Installation
+## 🚀 Installation
 
 ### Client Setup
-
-```bash
+bash
 git clone https://github.com/Abdur-Rahim-web/studyspot-client
 cd studyspot-client
 npm install
 npm run dev
+
+---
+
+### Server Setup
+bash
+git clone https://github.com/Abdur-Rahim-web/studyspot-server
+cd studyspot-server
+npm install
+npm start
+
+---
+
+## 👨‍💻 Developer
+
+Abdur Rahim
+Junior Full Stack Developer
+GitHub: https://github.com/Abdur-Rahim-web

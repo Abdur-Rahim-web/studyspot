@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./screenshots/home-page.png" width="100%" alt="StudySpot Banner" />
+  <img src="https://raw.githubusercontent.com/Abdur-Rahim-web/studyspot-client/main/screenshots/home-page.png" width="100%" alt="StudySpot Banner" />
 </p>
 
 <h1 align="center">🏫 StudySpot</h1>
@@ -87,42 +87,42 @@ It ensures secure authentication, role-based access control, and conflict-free b
 
 ### 🏠 Home Page
 <p align="center">
-  <img src="./screenshots/home-page.png" width="90%" />
+  <img src="https://raw.githubusercontent.com/Abdur-Rahim-web/studyspot-client/main/screenshots/home-page.png" width="90%" />
 </p>
 
 ---
 
 ### 🏢 All Rooms Page
 <p align="center">
-  <img src="./screenshots/all-room-page.png" width="90%" />
+  <img src="https://raw.githubusercontent.com/Abdur-Rahim-web/studyspot-client/main/screenshots/all-room-page.png" width="90%" />
 </p>
 
 ---
 
 ### 🏢 Room Details Page
 <p align="center">
-  <img src="./screenshots/room-details-page.png" width="90%" />
+  <img src="https://raw.githubusercontent.com/Abdur-Rahim-web/studyspot-client/main/screenshots/room-details-page.png" width="90%" />
 </p>
 
 ---
 
 ### ➕ Add Room Page
 <p align="center">
-  <img src="./screenshots/add-room-page.png" width="90%" />
+  <img src="https://raw.githubusercontent.com/Abdur-Rahim-web/studyspot-client/main/screenshots/add-room-page.png" width="90%" />
 </p>
 
 ---
 
 ### 📅 My Listings Page
 <p align="center">
-  <img src="./screenshots/my-listings-page.png" width="90%" />
+  <img src="https://raw.githubusercontent.com/Abdur-Rahim-web/studyspot-client/main/screenshots/my-listings-page.png" width="90%" />
 </p>
 
 ---
 
 ### 📌 My Bookings Page
 <p align="center">
-  <img src="./screenshots/my-bookings-page.png" width="90%" />
+  <img src="https://raw.githubusercontent.com/Abdur-Rahim-web/studyspot-client/main/screenshots/my-bookings-page.png" width="90%" />
 </p>
 
 ---

@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Abdur-Rahim-web/studyspot-client/main/screenshots/home-page.png" width="100%" alt="StudySpot Banner" />
-</p>
-
 <h1 align="center">🏫 StudySpot</h1>
 
 <p align="center">
@@ -13,6 +9,8 @@
   <a href="https://github.com/Abdur-Rahim-web/studyspot-client">💻 Client Repo</a> •
   <a href="https://github.com/Abdur-Rahim-web/studyspot-server">🛠 Server Repo</a>
 </p>
+
+![img](./public/screenshots/hero.png)
 
 ---
 
@@ -86,69 +84,57 @@ It ensures secure authentication, role-based access control, and conflict-free b
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Abdur-Rahim-web/studyspot-client/main/screenshots/home-page.png" width="90%" />
-</p>
+![img](./public/screenshots/home-page.png)
 
 ---
 
 ### 🏢 All Rooms Page
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Abdur-Rahim-web/studyspot-client/main/screenshots/all-room-page.png" width="90%" />
-</p>
+![img](./public/screenshots/all-room-page.png)
 
 ---
 
 ### 🏢 Room Details Page
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Abdur-Rahim-web/studyspot-client/main/screenshots/room-details-page.png" width="90%" />
-</p>
+![img](./public/screenshots/room-details-page.png)
 
 ---
 
 ### ➕ Add Room Page
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Abdur-Rahim-web/studyspot-client/main/screenshots/add-room-page.png" width="90%" />
-</p>
+![img](./public/screenshots/add-room-page.png)
 
 ---
 
 ### 📅 My Listings Page
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Abdur-Rahim-web/studyspot-client/main/screenshots/my-listings-page.png" width="90%" />
-</p>
+![img](./public/screenshots/my-listings-page.png)
 
 ---
 
 ### 📌 My Bookings Page
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Abdur-Rahim-web/studyspot-client/main/screenshots/my-bookings-page.png" width="90%" />
-</p>
+![img](./public/screenshots/my-bookings-page.png)
 
 ---
 
 ## 🚀 Installation
 
 ### Client Setup
-bash
+```
 git clone https://github.com/Abdur-Rahim-web/studyspot-client
 cd studyspot-client
 npm install
 npm run dev
-
+```
 ---
 
 ### Server Setup
-bash
+```
 git clone https://github.com/Abdur-Rahim-web/studyspot-server
 cd studyspot-server
 npm install
 npm start
-
+```
 ---
 
 ## 👨‍💻 Developer
 
-Abdur Rahim
-Junior Full Stack Developer
-GitHub: https://github.com/Abdur-Rahim-web
+**Abdur Rahim**
+- Junior Frontend Developer
+- GitHub: https://github.com/Abdur-Rahim-web
